@@ -1,0 +1,5 @@
+mcp[cli]>=1.2,<2
+fastapi
+uvicorn[standard]
+openai>=1.40
+python-dotenv

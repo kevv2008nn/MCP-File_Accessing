@@ -1,0 +1,20 @@
+{
+  "approval": "auto",
+  "servers": {
+    "files": {
+      "command": "${PYTHON}",
+      "args": ["${ROOT}/servers/file_organizer/server.py"],
+      "env": { "ORGANIZER_ROOT": "${ORGANIZER_ROOT:-${DATA}/files_sandbox}" }
+    },
+    "tasks": {
+      "command": "${PYTHON}",
+      "args": ["${ROOT}/servers/tasks/server.py"],
+      "env": { "TASKS_DB": "${DATA}/tasks.db" }
+    },
+    "notes": {
+      "command": "${PYTHON}",
+      "args": ["${ROOT}/servers/notes/server.py"],
+      "env": { "NOTES_DIR": "${DATA}/notes" }
+    }
+  }
+}

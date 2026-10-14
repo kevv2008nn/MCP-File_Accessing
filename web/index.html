@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MCP Agent Platform</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <aside id="sidebar">
+    <h1>MCP Agent</h1>
+    <div id="conn" class="pill off">connecting…</div>
+    <div id="provider" class="muted small"></div>
+
+    <h2>Tool servers</h2>
+    <p class="muted small">Switch a server off to hide its tools from the model. Fewer tools means faster and more accurate answers.</p>
+    <div id="servers"></div>
+
+    <h2>Approvals</h2>
+    <p class="muted small" id="approvalNote"></p>
+    <div class="legend small">
+      <span class="risk read">read</span> runs freely<br>
+      <span class="risk write">write</span> runs freely, changes data<br>
+      <span class="risk destructive">destructive</span> asks you first
+    </div>
+    <button id="newChat" class="ghost">New chat</button>
+  </aside>
+
+  <main>
+    <div id="messages" aria-live="polite">
+      <div id="empty">
+        <h2>What do you want to get done?</h2>
+        <div class="chips">
+          <button class="chip">What's on my agenda today?</button>
+          <button class="chip">Add a task: finish lab record, due tomorrow, high priority</button>
+          <button class="chip">Save a note about what I learned today</button>
+          <button class="chip">Look at my files folder and tell me what's messy</button>
+        </div>
+      </div>
+    </div>
+    <div id="composer">
+      <textarea id="input" rows="1" placeholder="Message your agent…  (Enter to send, Shift+Enter for a new line)"></textarea>
+      <button id="send">Send</button>
+      <button id="stop" class="danger" hidden>Stop</button>
+    </div>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
